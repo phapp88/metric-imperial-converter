@@ -85,7 +85,7 @@ function ConvertHandler() {
     if (initUnit === 'invalid unit') {
       return 'invalid unit';
     }
-    return `${initNum} ${this.spellOutUnit(initUnit)} converts to` +
+    return `${initNum} ${this.spellOutUnit(initUnit)} converts to ` +
      `${this.convert(initNum, initUnit)} ${returnUnit}`;
   };
   
