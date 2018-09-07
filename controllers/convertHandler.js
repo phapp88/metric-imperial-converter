@@ -31,9 +31,6 @@ function ConvertHandler() {
   };
   
   this.getReturnUnit = function(initUnit) {
-    if (initUnit === 'invalid unit') {
-      return 'invalid unit';
-    }
     var returnUnits = {
       gal: 'l',
       l: 'gal',
@@ -58,9 +55,6 @@ function ConvertHandler() {
   };
   
   this.convert = function(initNum, initUnit) {
-    if (initNum === 'invalid number' || initUnit === 'invalid unit') {
-      return 'invalid number';
-    }
     var convertFactors = {
       gal: 3.78541,
       l: 0.264172,
@@ -69,22 +63,12 @@ function ConvertHandler() {
       lbs: 0.453592,
       kg: 2.20462,
     }
-    var result;
     var returnNum = initNum * convertFactors[initUnit.toLowerCase()];
     // round to 5 decimal places (if necessary)
     return +(Math.round(returnNum + 'e+5') + 'e-5');
   };
   
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
-    if (initNum === 'invalid number' && initUnit === 'invalid unit') {
-      return 'invalid number and unit';
-    }
-    if (initNum === 'invalid number') {
-      return 'invalid number';
-    }
-    if (initUnit === 'invalid unit') {
-      return 'invalid unit';
-    }
     return `${initNum} ${this.spellOutUnit(initUnit)} converts to ` +
      `${this.convert(initNum, initUnit)} ${returnUnit}`;
   };
