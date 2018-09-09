@@ -10,7 +10,14 @@ function ConvertHandler() {
     if (numStrs.length > 2) {
       return 'invalid number';
     }
-    result = numStrs.length === 1 ? Number(numStrs[0]) : numStrs[0] / numStrs[1];
+    if (numStrs.length === 2) {
+      if (numStrs[0] === '' || numStrs[1] === '') {
+        return 'invalid number';
+      }
+      result = numStrs[0] / numStrs[1];
+    } else {
+      result = Number(numStrs[0]);
+    }
     if (Number.isNaN(result)) {
       return 'invalid number';
     }

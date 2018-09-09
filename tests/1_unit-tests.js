@@ -137,4 +137,19 @@ suite('Unit Tests', function(){
     
   });
 
+  suite('Function convertHandler.getNum(input) - one slash', function() {
+
+    test('Number before slash', function(done) {
+      var input = '3.1/km';
+      assert.equal(convertHandler.getNum(input), 'invalid number');
+      done();
+    })
+
+    test('Number before slash', function(done) {
+      var input = '/3.1km';
+      assert.equal(convertHandler.getNum(input), 'invalid number');
+      done();
+    })
+  })
+
 });
