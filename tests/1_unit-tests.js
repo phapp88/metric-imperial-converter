@@ -137,7 +137,7 @@ suite('Unit Tests', function(){
     
   });
 
-  suite('Function convertHandler.getNum(input) - one slash', function() {
+  suite('Function convertHandler.getNum(input) - one /', function() {
 
     test('Number before slash', function(done) {
       var input = '3.1/km';
